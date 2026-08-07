@@ -1,7 +1,5 @@
 #shop {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  --ps-color-primary: #0057b8;
-  --ps-font-family: "Inter", sans-serif;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
 }

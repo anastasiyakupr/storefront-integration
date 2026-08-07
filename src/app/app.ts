@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, ViewEncapsulation } from '@angular/core';
 import '@promotershop/storefront-components';
 import { initStorefront } from '@promotershop/storefront-runtime';
 import { createStorefrontClient } from '@promotershop/storefront-sdk';
@@ -7,7 +7,8 @@ import { createStorefrontClient } from '@promotershop/storefront-sdk';
   selector: 'app-root',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class App implements OnInit {
   async ngOnInit() {
@@ -23,7 +24,11 @@ export class App implements OnInit {
 
     await app.renderProduct('2000145825');
 
+    document.querySelectorAll('ps-ticket').forEach(el => {
+      el.setAttribute('contained', '');
+    });
+
     const { cart } = app.store.getSnapshot();
-    console.log("totalCount=", cart.totalCount); // number of items
+    console.log("totalCount=", cart.totalCount);
   }
 }
