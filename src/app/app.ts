@@ -1,9 +1,10 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewEncapsulation } from '@angular/core';
 import { createStorefrontClient, initStorefront } from '@promotershop/storefront-dropins';
+import { environment } from '../environments/environment';
 
 const client = createStorefrontClient({
-  baseUrl: '',
-  affiliateId: 'LWF',
+  baseUrl: environment.bffUrl,
+  affiliateId: environment.affiliateId,
 });
 
 initStorefront({
