@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { createStorefrontClient, initStorefront } from '@promotershop/storefront-dropins';
+
+const client = createStorefrontClient({
+  baseUrl: 'https://bff.storefront.sh',
+  affiliateId: 'LWF',
+});
+
+initStorefront({
+  root: document.body,
+  client,
+});
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('storefront-integration');
-}
+export class App {}
