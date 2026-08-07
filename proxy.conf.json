@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://bff.storefront.sh",
+    "secure": true,
+    "changeOrigin": true,
+    "headers": {
+      "x-affiliate-id": "LWF"
+    }
+  }
+}
