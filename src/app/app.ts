@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { createStorefrontClient, initStorefront } from '@promotershop/storefront-dropins';
 
 const client = createStorefrontClient({
-  baseUrl: 'https://bff.storefront.sh',
+  baseUrl: '',
   affiliateId: 'LWF',
 });
 
