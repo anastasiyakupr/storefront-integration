@@ -1,5 +1,17 @@
 #shop {
-  max-width: 960px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 3rem 1.5rem;
+
+  --ps-color-primary: #7c3aed;
+  --ps-color-primary-foreground: #ffffff;
+  --ps-color-foreground: #1e1b4b;
+  --ps-color-muted-foreground: #6366f1;
+  --ps-color-accent: #f5f3ff;
+  --ps-color-highlight: #f59e0b;
+
+  --ps-ticket-date-flat-background: #ede9fe;
+
+  --ps-font-heading: "Inter", system-ui, sans-serif;
+  --ps-font-body: "Inter", system-ui, sans-serif;
 }

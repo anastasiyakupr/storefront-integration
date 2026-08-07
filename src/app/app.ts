@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewEncapsulation } from '@angular/core';
 import { createStorefrontClient, initStorefront } from '@promotershop/storefront-dropins';
 
 const client = createStorefrontClient({
@@ -16,5 +16,6 @@ initStorefront({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.html',
   styleUrl: './app.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class App {}
