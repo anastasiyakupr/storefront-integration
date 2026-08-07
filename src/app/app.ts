@@ -2,6 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, ViewEncapsulation } from '@a
 import '@promotershop/storefront-components';
 import { initStorefront } from '@promotershop/storefront-runtime';
 import { createStorefrontClient } from '@promotershop/storefront-sdk';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,8 @@ import { createStorefrontClient } from '@promotershop/storefront-sdk';
 export class App implements OnInit {
   async ngOnInit() {
     const client = createStorefrontClient({
-      baseUrl: '',
-      affiliateId: 'LWF',
+      baseUrl: environment.bffUrl,
+      affiliateId: environment.affiliateId,
     });
 
     const app = await initStorefront({
@@ -22,13 +23,6 @@ export class App implements OnInit {
       client,
     });
 
-    await app.renderProduct('2000145825');
-
-    document.querySelectorAll('ps-ticket').forEach(el => {
-      el.setAttribute('contained', '');
-    });
-
-    const { cart } = app.store.getSnapshot();
-    console.log("totalCount=", cart.totalCount);
+    await app.renderProduct(environment.productId);
   }
 }
