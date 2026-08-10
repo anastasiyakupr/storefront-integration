@@ -11,6 +11,8 @@
   --ps-color-highlight: #f59e0b;
 
   --ps-ticket-date-flat-background: #ede9fe;
+  --ps-ticket-border: red;
+  --ps-color-border: red;
 
   --ps-font-heading: "Inter", system-ui, sans-serif;
   --ps-font-body: "Inter", system-ui, sans-serif;
